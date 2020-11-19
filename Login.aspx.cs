@@ -44,6 +44,7 @@ namespace WebApplication1
             }
 
             myDb = new OleDbConnection(con);
+           
 
 
             string cmdText = "select Count(*) from RegisteredUser where Email=? and UserPassword=?";
@@ -54,8 +55,7 @@ namespace WebApplication1
                 myDb.Open();
                 cmd.Parameters.AddWithValue("@p1", txtbxEmail.Text);
                 cmd.Parameters.AddWithValue("@p2", txtbxPassword.Text);
-               // string role = RoleApplication.type;
-               // cmd.Parameters.AddWithValue("@Type",role);
+               
                 
                 int result = (int)cmd.ExecuteScalar();
                  if(result > 0)

@@ -53,6 +53,25 @@ namespace WebApplication1
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "Registration", "alert('" + "User Record created" + "');", true);
+                    myDb = new OleDbConnection(con);
+
+                    myDb.Open();
+                    string Sql = "INSERT INTO RegisteredUser(FirstName, LastName, Email, UserPassword, Type) VALUES (@first, @last, @email, @pwd, @type)";
+                    //+ txtbxName.Text + "," + txtbxSurname.Text + "," + txtbxEmail.Text + "," + txtbxPassword.Text +") ;
+                    OleDbCommand cmd = new OleDbCommand(Sql, myDb);
+
+                    //MsgBox("saved")
+
+                    cmd.Parameters.AddWithValue("@first", txtbxName.Text);
+                    cmd.Parameters.AddWithValue("@last", txtbxSurname.Text);
+
+                    cmd.Parameters.AddWithValue("@email", txtbxEmail.Text);
+
+                    cmd.Parameters.AddWithValue("@pwd", txtbxPassword.Text);
+                    cmd.Parameters.AddWithValue("@type", txtbxType.Text);
+                    cmd.ExecuteNonQuery();
+                    myDb.Close();
+
                     txtbxName.Text = "";
                     txtbxSurname.Text = "";
                     txtbxEmail.Text = "";
@@ -65,24 +84,7 @@ namespace WebApplication1
                 }
             }
 
-            myDb = new OleDbConnection(con);
 
-            myDb.Open();
-            string Sql = "INSERT INTO RegisteredUser(FirstName, LastName, Email, UserPassword, Type) VALUES (@first, @last, @email, @pwd, @type)";
-            //+ txtbxName.Text + "," + txtbxSurname.Text + "," + txtbxEmail.Text + "," + txtbxPassword.Text +") ;
-            OleDbCommand cmd = new OleDbCommand(Sql, myDb);
-
-            //MsgBox("saved")
-
-            cmd.Parameters.AddWithValue("@first", txtbxName.Text);
-            cmd.Parameters.AddWithValue("@last", txtbxSurname.Text);
-
-            cmd.Parameters.AddWithValue("@email", txtbxEmail.Text);
-
-            cmd.Parameters.AddWithValue("@pwd", txtbxPassword.Text);
-            cmd.Parameters.AddWithValue("@type", txtbxType.Text);
-            cmd.ExecuteNonQuery();
-            myDb.Close();
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

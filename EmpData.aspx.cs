@@ -33,19 +33,10 @@ namespace WebApplication1
                 myDb = new OleDbConnection(con);
                 myDb.Open();
                 btnCreate.Enabled = false;
-                btnModify.Enabled = true;
+                btnModify.Enabled = false;
                 btnDelete.Enabled = true;
                 btnLogOT.Enabled = true;
                 GridView1.Visible = false;
-
-               /* OleDbCommand cmd = myDb.CreateCommand();
-                cmd.CommandText = "SELECT * from RegisteredUser";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter*/
-
-
-
             }
 
         }

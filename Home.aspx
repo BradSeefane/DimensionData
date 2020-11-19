@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            margin-left: 454px;
+            margin-left: 408px;
             margin-top: 0px;
         }
         .auto-style2 {
@@ -16,10 +16,7 @@
         .auto-style3 {
             margin-left: 18px;
         }
-        .auto-style4 {
-            margin-left: 39px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,7 +25,6 @@
             <asp:Button ID="Button1" runat="server" CssClass="auto-style1" Height="26px" OnClick="Button1_Click" Text="Log In" Width="66px" />
             <asp:Button ID="btnRegister" runat="server" CssClass="auto-style2" OnClick="btnRegister_Click" Text="Register" />
             <asp:Button ID="btnEmplData" runat="server" CssClass="auto-style3" OnClick="btnEmplData_Click" Text="Data" Width="63px" />
-            <asp:Button ID="btnAbout" runat="server" CssClass="auto-style4" Text="About" />
         </p>
     </form>
 </body>

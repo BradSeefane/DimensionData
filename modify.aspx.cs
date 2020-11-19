@@ -42,5 +42,10 @@ namespace WebApplication1
         
             }
         }
+
+        protected void txtbxHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

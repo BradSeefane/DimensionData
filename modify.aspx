@@ -25,6 +25,9 @@
             margin-left: 204px;
             margin-top: 6px;
         }
+        .auto-style7 {
+            margin-left: 0px;
+        }
     </style>
 </head>
 <body>
@@ -57,6 +60,7 @@
             &nbsp;</p>
         <p>
         <asp:Button ID="btnModify" runat="server" OnClick="btnModify_Click" Text="Modify" />
+            <asp:Button ID="txtbxHome" runat="server" CssClass="auto-style7" OnClick="txtbxHome_Click" Text="Home" />
         </p>
     </form>
 </body>
